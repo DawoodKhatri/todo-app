@@ -8,7 +8,7 @@ export default function Controls({filter}) {
             className="form-control success w-auto"
             id="search"
             type="test"
-            placeholder="search"
+            placeholder="Search"
             onChange={filter}
           />
           <span className="input-group-text">
