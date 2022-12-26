@@ -15,7 +15,7 @@ export default function Card({
         </div>
         <div className="card-body">
           <p className=" card-title">{description}</p>
-          <p className=" card-text">Due By: {due}</p>
+          <p className=" card-text">Due By: {due.split("-").reverse().join("-")}</p>
         </div>
         <div className="card-footer d-flex justify-content-between align-items-center p-2">
           <div>
