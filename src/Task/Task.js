@@ -16,7 +16,7 @@ export default function Task({ tasks, edit, remove, modify, modal }) {
           modal={modal}
         />
       ))}
-      {!tasks && (
+      {!tasks?.length && (
         <div className="container-fluid text-center">
           <p>No Tasks Added</p>
         </div>

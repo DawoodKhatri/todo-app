@@ -191,6 +191,11 @@ function App() {
     window.localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
+  useEffect(() => {
+    window.localStorage.getItem("tasks") === "null" &&
+      window.localStorage.removeItem("tasks");
+  }, []);
+
   return (
     <>
       <BrowserRouter>
