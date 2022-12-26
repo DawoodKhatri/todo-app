@@ -11,7 +11,9 @@ import Task from "./Task/Task";
 
 function App() {
   const [tasks, setTasks] = useState(
-    JSON.parse(window.localStorage.getItem("tasks"))
+    window.localStorage.getItem("tasks")
+      ? JSON.parse(window.localStorage.getItem("tasks"))
+      : []
   );
   const [filtered, setFiltered] = useState();
   const [modal, setModal] = useState({});
@@ -208,7 +210,7 @@ function App() {
             modal={setModal}
           />
         )}
-        <Tabs change={setTab} />
+        <Tabs curr={tab} change={setTab} />
         <hr />
         <Routes>
           <Route
