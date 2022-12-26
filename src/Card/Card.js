@@ -8,7 +8,7 @@ export default function Card({
   modal,
 }) {
   return (
-    <div className="col-12 col-sm-6 col-md-4">
+    <div className="col-12 col-md-6 col-xl-4">
       <div className="card p-0 mx-1 my-2 m-sm-3">
         <div className="card-header">
           <h4>{title}</h4>

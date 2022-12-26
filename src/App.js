@@ -11,7 +11,8 @@ import Task from "./Task/Task";
 
 function App() {
   const [tasks, setTasks] = useState(
-    window.localStorage.getItem("tasks")
+    window.localStorage.getItem("tasks") &&
+      window.localStorage.getItem("tasks") !== "null"
       ? JSON.parse(window.localStorage.getItem("tasks"))
       : []
   );
@@ -145,33 +146,6 @@ function App() {
         filter = sort.filter((task) => task.status === "completed");
       }
       setFiltered(filter);
-    }
-  };
-
-  const searchTask = () => {
-    let query = document.getElementById("search").value.toLowerCase();
-    query !== ""
-      ? setFiltered(tasks.filter((t) => t.title.toLowerCase().includes(query)))
-      : setFiltered([]);
-  };
-
-  const sortBy = () => {
-    let type = document.getElementById("sort").value;
-    const temp = [].concat(filtered.length ? filtered : tasks);
-    if (type === "Due Date Ascending") {
-      setFiltered(
-        temp.sort((a, b) => (a.due - b.due ? 1 : a.due < b.due ? -1 : 0))
-      );
-    }
-
-    if (type === "Due Date Descending") {
-      setFiltered(
-        temp.sort((a, b) => (a.due > b.due ? -1 : a.due < b.due ? 1 : 0))
-      );
-    }
-
-    if (type === "Sort By") {
-      searchTask();
     }
   };
 
