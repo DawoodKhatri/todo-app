@@ -196,6 +196,7 @@ function App() {
             path="/"
             element={
               <Task
+                alltasks={filtered ? filtered : tasks}
                 tasks={filtered ? filtered : tasks}
                 edit={editTask}
                 remove={removeTask}
@@ -208,6 +209,7 @@ function App() {
             path="/duetoday"
             element={
               <Task
+                alltasks={filtered ? filtered : tasks}
                 tasks={filtered ? getDueToday(filtered) : getDueToday(tasks)}
                 edit={editTask}
                 remove={removeTask}
@@ -220,6 +222,7 @@ function App() {
             path="/overdue"
             element={
               <Task
+                alltasks={filtered ? filtered : tasks}
                 tasks={filtered ? getOverDue(filtered) : getOverDue(tasks)}
                 edit={editTask}
                 remove={removeTask}
